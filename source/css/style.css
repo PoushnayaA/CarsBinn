@@ -22,15 +22,17 @@ a {
 }
 body {
   font-family: "Ubuntu", "Arial", sans-serif;
-  font-size: 14px;
   font-weight: 400;
-  line-height: 21px;
-  color: #000000;
+  color: #292929;
   word-wrap: break-word;
   margin: 0;
 }
 img {
   max-width: 100%;
+}
+ul {
+  margin: 0;
+  list-style-type: none;
 }
 .visually-hidden {
   position: absolute;
@@ -41,5 +43,33 @@ img {
   border: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+.page__wrapper {
+  margin: 0 auto;
+  width: 320px;
+}
+.title {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 135%;
+  text-transform: uppercase;
+}
+.content-wrapper {
+  padding: 0 16px;
+}
+.content-wrapper__list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.advantage-item {
+  text-align: center;
+}
+.advantage-item__value {
+  color: #D91F2B;
+  font-size: 56px;
+}
+.advantage-item__description {
+  color: #9999AD;
 }
 /*# sourceMappingURL=style.css.map */
