@@ -1,0 +1,35 @@
+.main-header {
+  background-image: url("../../img/bg-red-bmw.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  padding: 16px;
+  font-weight: 400;
+
+  &__container {
+    margin-top: 60px;
+  }
+
+  &__content {
+    text-transform: uppercase;
+    line-height: 135%;
+  }
+
+  &__change-language {
+    background-color: inherit;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    margin-left: auto;
+    position: relative;
+
+    &::after {
+      content: url("../../img/extra/arrow.svg");
+      margin-left: 6px;
+    }
+  }
+
+}
+

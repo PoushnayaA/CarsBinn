@@ -32,9 +32,9 @@ a {
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Ubuntu", "Arial", sans-serif;
 }
 body {
-  font-family: "Ubuntu", "Arial", sans-serif;
   font-weight: 400;
   color: #292929;
   word-wrap: break-word;
@@ -70,6 +70,7 @@ ul {
   font-size: 16px;
   font-weight: 500;
   font-family: "Ubuntu", "Arial", sans-serif;
+  width: 100%;
 }
 .page__wrapper {
   margin: 0 auto;
@@ -274,5 +275,56 @@ ul {
 .connection__field::placeholder {
   font-family: "Ubuntu", "Arial", sans-serif;
   color: #9999AD;
+}
+.main-footer {
+  padding: 16px;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.contact__rules a {
+  color: #9999AD;
+  position: relative;
+}
+.contact__rules a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #9999AD;
+  left: 0;
+  bottom: 0;
+}
+.main-header {
+  background-image: url("../../img/bg-red-bmw.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  padding: 16px;
+  font-weight: 400;
+}
+.main-header__container {
+  margin-top: 60px;
+}
+.main-header__content {
+  text-transform: uppercase;
+  line-height: 135%;
+}
+.main-header__change-language {
+  background-color: inherit;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  margin-left: auto;
+  position: relative;
+}
+.main-header__change-language::after {
+  content: url("../../img/extra/arrow.svg");
+  margin-left: 6px;
 }
 /*# sourceMappingURL=style.css.map */

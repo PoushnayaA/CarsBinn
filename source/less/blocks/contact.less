@@ -1,0 +1,21 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+
+  &__rules a {
+    color: #9999AD;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #9999AD;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}

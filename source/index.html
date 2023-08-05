@@ -21,13 +21,17 @@
     <div class="page__wrapper">
       <header class="main-header">
         <nav class="main-header__nav">
-          <select class="main-header__language language">
+          <button class="main-header__change-language">RUS</button>
+          <select class="main-header__language language visually-hidden">
             <option class="language__item" selected value="rus">Rus</option>
             <option class="language__item" value="eng">Eng</option>
             <option class="language__item" value="chn">Chn</option>
           </select>
           <section class="main-header__container">
-            <div class="main-header__title">binn</div>
+            <div class="visually-hidden">binn</div>
+            <picture>
+              <img class="main-header__logo" src="img/logo/binn-logo.svg" width="182" height="73" alt="Binn логотип.">
+            </picture>
             <p class="main-header__content">— эксперт в разработке и поддержке веб-приложений
               для автопроизводителей и их финансовых подразделений
             </p>
@@ -209,13 +213,12 @@
         </div>
       </main>
       <footer class="main-footer">
-        <ul class="main-footer__contacts">
-          <li>+7 (495) 969-27-74</li>
-          <li>info@binn.ru</li>
-          <li>Москва, проспект Андропова, д. 22, БЦ «Нагатинский»</li>
-          <li>© 2023 BINN. Все права защищены
-            <a href="">Условия передачи информации</a>
-          </li>
+        <ul class="main-footer__contacts contact">
+          <li class="contact__phone">+7 (495) 969-27-74</li>
+          <li class="contact__email">info@binn.ru</li>
+          <li class="contact__address">Москва, проспект Андропова, д. 22, БЦ «Нагатинский»</li>
+          <li class="contact__copyright">© 2023 BINN. Все права защищены</li>
+          <li class="contact__rules"><a href="">Условия передачи информации</a></li>
         </ul>
       </footer>
     </div>
