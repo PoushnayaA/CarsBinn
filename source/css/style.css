@@ -12,6 +12,19 @@
   src: url("../fonts/ubuntu-bold.woff") format("woff"), url("../fonts/ubuntu-bold.woff2") format("woff2");
   font-display: swap;
 }
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/ubuntu-medium.woff") format("woff"), url("../fonts/ubuntu-medium.woff2") format("woff2");
+  font-display: swap;
+}
+.features {
+  font-family: "Ubuntu", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 135%;
+  font-size: 56px;
+}
 a {
   text-decoration: none;
 }
@@ -29,9 +42,12 @@ body {
 }
 img {
   max-width: 100%;
+  display: block;
+  margin: 0;
 }
 ul {
   margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 .visually-hidden {
@@ -44,32 +60,219 @@ ul {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.button {
+  background-color: #D91F2B;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 16px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Ubuntu", "Arial", sans-serif;
+}
 .page__wrapper {
   margin: 0 auto;
   width: 320px;
+  border: solid 1px grey;
 }
 .title {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 135%;
   text-transform: uppercase;
 }
+.title--center {
+  text-align: center;
+}
 .content-wrapper {
   padding: 0 16px;
+}
+.content-wrapper--partners {
+  padding: 0;
 }
 .content-wrapper__list {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 20px 0;
+  position: relative;
+}
+.content-wrapper__list--numbers::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #EFEFEF;
+}
+.content-wrapper__list--advantages {
+  gap: 10px;
+}
+.content-wrapper__text {
+  line-height: 135%;
+}
+.content-wrapper__title--partners {
+  padding-left: 16px;
+}
+.item-header {
+  padding: 0 16px;
+}
+.item-header__text {
+  font-weight: 400;
+  line-height: 100%;
+  font-size: 16px;
+  margin: 16px 0;
+}
+.item-header__text-title {
+  font-weight: 500;
+  line-height: 135%;
+  font-size: 24px;
+  margin: 16px 0;
+}
+.item-header__text-description {
+  font-weight: 400;
+  line-height: 135%;
+  font-size: 18px;
+  margin: 16px 0;
 }
 .advantage-item {
   text-align: center;
 }
 .advantage-item__value {
   color: #D91F2B;
-  font-size: 56px;
 }
 .advantage-item__description {
+  font-size: 16px;
+  line-height: 135%;
+  font-weight: 400;
+  color: #9999AD;
+}
+.main-advantages__item {
+  background-color: #F8F8F8;
+  border-radius: 8px;
+  padding: 10px;
+}
+.main-advantages__description {
+  line-height: 135%;
+}
+.main-advantages__count {
+  font-size: 88px;
+  color: #D91F2B;
+  line-height: 130%;
+  position: relative;
+}
+.main-advantages__count::before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 100%;
+  bottom: 15px;
+  left: 0;
+  background-color: #F8F8F8;
+}
+.main-advantages__count::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 15px;
+  left: 0;
+  background-color: #D91F2B;
+}
+.partners {
+  padding: 0;
+}
+.partners__content {
+  background-color: #F8F8F8;
+}
+.partners__logo {
+  padding-top: 10px;
+  padding-left: 16px;
+}
+.partners__img-container {
+  position: relative;
+}
+.partners__img {
+  background-image: url(../../img/extra/bmw-background.svg);
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: 238px 79px;
+  margin: 10px auto 0;
+}
+.partners__img--volvo {
+  background-image: url(../../img/extra/volvo-background.svg);
+}
+.partners__img--rn-bank {
+  padding: 30px 0 0;
+  background-image: url(../../img/extra/rn-bank-background.svg);
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 10px;
+  padding-bottom: 15px;
+}
+.description__item {
+  padding-left: 10px;
+  position: relative;
+}
+.description__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #9999AD;
+  height: 100%;
+  width: 2px;
+}
+.form-wrapper {
+  background-image: url("../../img/bg-volvo.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  padding: 16px;
+  font-weight: 400;
+}
+.form-wrapper__title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 19px;
+  line-height: 135%;
+}
+.form-wrapper__text {
+  font-size: 16px;
+  line-height: 135%;
+}
+.form-wrapper__submit-link {
+  margin-top: 12px;
+  color: #9999AD;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+.form-wrapper__submit-link a {
+  color: #F7F7F7;
+}
+.connection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.connection__field {
+  background-color: inherit;
+  padding: 12px;
+  border: solid 1px #9999AD;
+  border-radius: 5px;
+  resize: none;
+  color: #ffffff;
+}
+.connection__field:active {
+  border-color: #ffffff;
+}
+.connection__field::placeholder {
+  font-family: "Ubuntu", "Arial", sans-serif;
   color: #9999AD;
 }
 /*# sourceMappingURL=style.css.map */

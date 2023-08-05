@@ -1,0 +1,38 @@
+.main-advantages {
+  &__item {
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  &__description {
+    line-height: 135%;
+  }
+
+  &__count {
+    font-size: 88px;
+    color: #D91F2B;
+    line-height: 130%;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 12px;
+      width: 100%;
+      bottom: 15px;
+      left: 0;
+      background-color: #F8F8F8;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      bottom: 15px;
+      left: 0;
+      background-color: #D91F2B;
+    }
+  }
+}
