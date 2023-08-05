@@ -13,6 +13,7 @@
   &__content {
     text-transform: uppercase;
     line-height: 135%;
+    font-size: 20px;
   }
 
   &__change-language {
@@ -24,10 +25,15 @@
     display: block;
     margin-left: auto;
     position: relative;
+    cursor: pointer;
 
     &::after {
       content: url("../../img/extra/arrow.svg");
       margin-left: 6px;
+    }
+
+    &:active::after {
+      transform: rotate(180deg);
     }
   }
 

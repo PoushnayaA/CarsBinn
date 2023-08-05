@@ -312,6 +312,7 @@ ul {
 .main-header__content {
   text-transform: uppercase;
   line-height: 135%;
+  font-size: 20px;
 }
 .main-header__change-language {
   background-color: inherit;
@@ -322,9 +323,36 @@ ul {
   display: block;
   margin-left: auto;
   position: relative;
+  cursor: pointer;
 }
 .main-header__change-language::after {
   content: url("../../img/extra/arrow.svg");
   margin-left: 6px;
+}
+.main-header__change-language:active::after {
+  transform: rotate(180deg);
+}
+.slider-pagination {
+  padding: 25px 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.slider-pagination__item {
+  cursor: pointer;
+  padding: 6px 0;
+}
+.slider-pagination__button {
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  opacity: 0.25;
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+}
+.slider-pagination__button--active {
+  background-color: #D91F2B;
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

@@ -21,7 +21,7 @@
     <div class="page__wrapper">
       <header class="main-header">
         <nav class="main-header__nav">
-          <button class="main-header__change-language">RUS</button>
+          <button type="button" class="main-header__change-language" value="RUS">RUS</button>
           <select class="main-header__language language visually-hidden">
             <option class="language__item" selected value="rus">Rus</option>
             <option class="language__item" value="eng">Eng</option>
@@ -37,6 +37,28 @@
             </p>
             <button class="main-header__button button" type="button">+ стать клиентом</button>
           </section>
+          <ul class="main-header__slider slider-pagination">
+            <li class="slider-pagination__item slider-pagination__item">
+              <button class="slider-pagination__button slider-pagination__button--active" type="button">
+                <span class="visually-hidden">BMW</span>
+              </button>
+            </li>
+            <li class="slider-pagination__item">
+              <button class="slider-pagination__button" type="button">
+                <span class="visually-hidden">Volvo</span>
+              </button>
+            </li>
+            <li class="slider-pagination__item">
+              <button class="slider-pagination__button" type="button">
+                <span class="visually-hidden">Mini cooper</span>
+              </button>
+            </li>
+            <li class="slider-pagination__item">
+              <button class="slider-pagination__button" type="button">
+                <span class="visually-hidden">Infinity</span>
+              </button>
+            </li>
+          </ul>
         </nav>
       </header>
       <main class="page-container">
