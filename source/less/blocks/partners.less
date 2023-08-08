@@ -5,17 +5,38 @@
     @media (min-width: @tablet-width) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin-bottom: 25px;
+      margin-bottom: 40px;
+      gap: 25px;
     }
   }
 
   &__content {
     background-color: #F8F8F8;
+
+    @media (min-width: @tablet-width) {
+      border-radius: 5px;
+      display: flex;
+    }
+  }
+
+  &__content-wrapper {
+    @media (min-width: @tablet-width) {
+      padding-top: 8px;
+      padding-left: 10px;
+    }
   }
 
   &__logo {
     padding-top: 25px;
     padding-left: 16px;
+
+    @media (min-width: @tablet-width) {
+      max-width: 78px;
+    }
+
+    &--rn-bank {
+      padding-top: 0;
+    }
   }
 
   &__img-container {
@@ -25,15 +46,36 @@
     background-position: center 0;
     background-size: 238px 79px;
 
+    @media (min-width: @tablet-width) {
+      background-size: contain;
+    }
+
     &--volvo {
       background-image: url(../../img/extra/volvo-background.svg);
       background-size: 255px 79px;
+
+      @media (min-width: @tablet-width) {
+        // background-size: 595px 115px;
+        background-size: contain;
+      }
     }
 
     &--rn-bank {
       background-image: url(../../img/extra/rn-bank-background.svg);
       background-size: 269px 83px;
+
+      @media (min-width: @tablet-width) {
+        // background-size: 580px 115px;
+        background-size: contain;
+        position: relative;
+      }
     }
+    }
+
+    &--rn-bank picture {
+      @media (min-width: @tablet-width) {
+        position: relative;
+      }
     }
 
   &__img {
@@ -41,15 +83,41 @@
     padding-top: 37px;
     object-fit: cover;
 
+    @media (min-width: @tablet-width) {
+      height: auto;
+      width: 100%;
+    }
+
     &--volvo {
       margin: 27px auto 0;
       padding-top: 32px;
+
+      @media (min-width: @tablet-width) {
+        margin-top: 15px;
+        padding-top: 0;
+      }
     }
 
     &--rn-bank {
       margin: 22px auto 0;
       padding: 36px 61px 0;
       object-fit: none;
+
+      @media (min-width: @tablet-width) {
+        // object-fit: cover;
+        // position: absolute;
+        // padding: 0;
+        // left: 0;
+        // right: 0;
+        // top: 0;
+        // max-height: 350px;
+        // max-width: 440px;
+        margin-top: 10px;
+        padding: 0;
+        object-fit: cover;
+        width: 55%;
+        height: fit-content;
+      }
     }
   }
 }

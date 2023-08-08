@@ -36,5 +36,9 @@
   "engines": {
     "node": "^16"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "smoothscroll-polyfill": "^0.4.4",
+    "swiper": "^10.1.0"
+  }
 }

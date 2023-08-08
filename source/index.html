@@ -19,7 +19,7 @@
   <div class="page__wrapper">
     <h1 class="visually-hidden">binn</h1>
     <div class="page__wrapper">
-      <header class="main-header">
+      <header class="main-header main-header--bmw">
         <nav class="main-header__nav">
           <div class="main-header__button-wrapper change-language">
             <button type="button" class="change-language__button" value="RUS">RUS</button>
@@ -41,7 +41,7 @@
             <button class="main-header__button button" type="button">+ стать клиентом</button>
           </section>
           <ul class="main-header__slider slider-pagination">
-            <li class="slider-pagination__item slider-pagination__item">
+            <li class="slider-pagination__item">
               <button class="slider-pagination__button slider-pagination__button--active" type="button">
                 <span class="visually-hidden">BMW</span>
               </button>
@@ -66,17 +66,17 @@
       </header>
       <main class="page-container">
         <div class="content-wrapper">
-        <div class="content-wrapper__text-container">
-          <h2 class="content-wrapper__title title">О нас</h2>
-          <p class="content-wrapper__text">
-            За почти 20 лет сотрудничества с ведущими автомобильными компаниями
-            мы на практике столкнулись со множеством вызовов: выход марки на рынок РФ,
-            старт продаж новых моделей авто, развитие дилерской сети, бум автокредитования,
-            мировые финансовые кризисы, пандемийные и санкционные ограничения.
-            Всякий раз компания BINN успешно помогала своим клиентам развивать
-            бизнес в интернете и преодолевать сложности внешних шоков.
-          </p>
-        </div>
+          <div class="content-wrapper__text-container">
+            <h2 class="content-wrapper__title title">О нас</h2>
+            <p class="content-wrapper__text">
+              За почти 20 лет сотрудничества с ведущими автомобильными компаниями
+              мы на практике столкнулись со множеством вызовов: выход марки на рынок РФ,
+              старт продаж новых моделей авто, развитие дилерской сети, бум автокредитования,
+              мировые финансовые кризисы, пандемийные и санкционные ограничения.
+              Всякий раз компания BINN успешно помогала своим клиентам развивать
+              бизнес в интернете и преодолевать сложности внешних шоков.
+            </p>
+          </div>
           <ul class="content-wrapper__list content-wrapper__list--numbers">
             <li class="content-wrapper__item advantage-item">
               <span class="advantage-item__value features">>20</span>
@@ -102,28 +102,31 @@
                   <img class="partners__img" src="img/bmw.svg" width="288" height="190" alt="BMW.">
                 </picture>
               </div>
-              <div class="partners__content">
+              <div class="partners__content partners__content--bmw">
                 <picture>
                   <img class="partners__logo" src="img/logo/bmw-logo.svg" width="75" height="87" alt="BMW.">
                 </picture>
-                <div class="partners__header item-header">
-                  <div class="item-header__text">Сотрудничаем с</div>
-                  <div class="item-header__text-title">BMW Financial Services Russia с 2010 года</div>
+                <div class="partners__content-wrapper">
+                  <div class="partners__header item-header">
+                    <div class="item-header__text">Сотрудничаем с</div>
+                    <div class="item-header__text-title">BMW Financial Services Russia с 2010 года</div>
+                  </div>
+                  <ul class="partners__description description">
+                    <li class="description__item">Разработка и поддержка основных сайтов БМВ банка и БМВ Лизинга</li>
+                    <li class="description__item">Внедрение и модернизация новых digital-сервисов от интерактивных
+                      кредитных онлайн-калькуляторов с подбором автомобиля из линейки BMW до юридически значимых
+                      процедур
+                      первичного
+                      одобрения кредитов без физического посещения дилерских центров во время локдауна
+                    </li>
+                    <li class="description__item">Контентная и техническая поддержка основного сайта мотоциклетного
+                      подразделения BMW Motorrad</li>
+                    <li class="description__item">Интеграция с IT-системами BMW, а также с CRM-системой и программным
+                      обеспечением колл-центра банка</li>
+                    <li class="description__item">Редизайн и адаптация веб-ресурсов при обновлении айдентики бренда</li>
+                    <li class="description__item">Хостинг и администрирование внешних IT-ресурсов банка</li>
+                  </ul>
                 </div>
-                <ul class="partners__description description">
-                  <li class="description__item">Разработка и поддержка основных сайтов БМВ банка и БМВ Лизинга</li>
-                  <li class="description__item">Внедрение и модернизация новых digital-сервисов от интерактивных
-                    кредитных онлайн-калькуляторов с подбором автомобиля из линейки BMW до юридически значимых процедур
-                    первичного
-                    одобрения кредитов без физического посещения дилерских центров во время локдауна
-                  </li>
-                  <li class="description__item">Контентная и техническая поддержка основного сайта мотоциклетного
-                    подразделения BMW Motorrad</li>
-                  <li class="description__item">Интеграция с IT-системами BMW, а также с CRM-системой и программным
-                    обеспечением колл-центра банка</li>
-                  <li class="description__item">Редизайн и адаптация веб-ресурсов при обновлении айдентики бренда</li>
-                  <li class="description__item">Хостинг и администрирование внешних IT-ресурсов банка</li>
-                </ul>
               </div>
             </li>
             <li class="partners__item">
@@ -136,25 +139,29 @@
               </div>
               <div class="partners__content">
                 <picture>
-                  <img class="partners__logo" src="img/logo/volvo-logo.svg" width="76" height="85" alt="Volvo.">
+                  <img class="partners__logo partners__logo--volvo" src="img/logo/volvo-logo.svg" width="76" height="85" alt="Volvo.">
                 </picture>
-                <div class="partners__header item-header">
-                  <div class="item-header__text">Сотрудничаем с</div>
-                  <div class="item-header__text-title">Volvo с 2004 года</div>
+                <div class="partners__content-wrapper">
+                  <div class="partners__header item-header">
+                    <div class="item-header__text">Сотрудничаем с</div>
+                    <div class="item-header__text-title">Volvo с 2004 года</div>
+                  </div>
+                  <ul class="partners__description description">
+                    <li class="description__item">Локализация, контентная и техническая поддержка основного сайта</li>
+                    <li class="description__item">Разработка внутреннего веб-портала для дилерской сети Volvo Support
+                    </li>
+                    <li class="description__item">Разработка и поддержка сайта закрытого клуба владельцев автомобилей
+                      Volvo
+                      Priviledge Club</li>
+                    <li class="description__item">Разработка множества промо-сайтов и сайтов-сателлитов</li>
+                    <li class="description__item">Генеральный подряд и интеграция с различными IT-системами
+                      колл-центров,
+                      CRM-подрядчиков,
+                      платёжных систем и прочих
+                    </li>
+                    <li class="description__item">Обеспечение работоспособности IT-инфраструктуры</li>
+                  </ul>
                 </div>
-                <ul class="partners__description description">
-                  <li class="description__item">Локализация, контентная и техническая поддержка основного сайта</li>
-                  <li class="description__item">Разработка внутреннего веб-портала для дилерской сети Volvo Support</li>
-                  <li class="description__item">Разработка и поддержка сайта закрытого клуба владельцев автомобилей
-                    Volvo
-                    Priviledge Club</li>
-                  <li class="description__item">Разработка множества промо-сайтов и сайтов-сателлитов</li>
-                  <li class="description__item">Генеральный подряд и интеграция с различными IT-системами колл-центров,
-                    CRM-подрядчиков,
-                    платёжных систем и прочих
-                  </li>
-                  <li class="description__item">Обеспечение работоспособности IT-инфраструктуры</li>
-                </ul>
               </div>
             </li>
             <li class="partners__item">
@@ -167,24 +174,28 @@
               </div>
               <div class="partners__content">
                 <picture>
-                  <img class="partners__logo" src="img/logo/pn-bank-logo.svg" width="180" height="80" alt="РН Банк.">
+                  <img class="partners__logo partners__logo--rn-bank" src="img/logo/pn-bank-logo.svg" width="180" height="80" alt="РН Банк.">
                 </picture>
-                <div class="partners__header item-header">
-                  <div class="item-header__text">Сотрудничаем с</div>
-                  <div class="item-header__text-title">РН банком с 2010 года</div>
-                  <div class="item-header__text-description">
-                    (РН банк — финансовое подразделение альянса <br>Renault-Nissan)
+                <div class="partners__content-wrapper">
+                  <div class="partners__header item-header">
+                    <div class="item-header__text">Сотрудничаем с</div>
+                    <div class="item-header__text-title">РН банком с 2010 года</div>
+                    <div class="item-header__text-description">
+                      (РН банк — финансовое подразделение альянса <br>Renault-Nissan)
+                    </div>
                   </div>
+                  <ul class="partners__description description">
+                    <li class="description__item">Разработка, поддержка и развитие основного сайта банка</li>
+                    <li class="description__item">Разработка и развитие дилерского портала, через который центральный
+                      офис
+                      организовал взаимодействие
+                      с дилерами Renault, Nissan, Infiniti, Datsun и Lada
+                    </li>
+                    <li class="description__item">Разработка, техническая поддержка и хостинг основного сайта
+                      лизингового
+                      подразделения — РНЛ Лизинг</li>
+                  </ul>
                 </div>
-                <ul class="partners__description description">
-                  <li class="description__item">Разработка, поддержка и развитие основного сайта банка</li>
-                  <li class="description__item">Разработка и развитие дилерского портала, через который центральный офис
-                    организовал взаимодействие
-                    с дилерами Renault, Nissan, Infiniti, Datsun и Lada
-                  </li>
-                  <li class="description__item">Разработка, техническая поддержка и хостинг основного сайта лизингового
-                    подразделения — РНЛ Лизинг</li>
-                </ul>
               </div>
             </li>
           </ul>
@@ -224,16 +235,16 @@
         </div>
         <div class="form-wrapper">
           <div class="form-wrapper__title">Ищите надёжного подрядчика с богатым опытом разработки и поддержки
-            автомобильных <br>веб-проектов в России?
+            автомобильных веб&#8209;проектов в России?
           </div>
           <p class="form-wrapper__text">Интернет-агентство BINN – возможно, то, что Вы искали.</p>
           <form class="form-wrapper__form connection" action="" method="post">
             <input class="connection__field" type="text" name="user-name" placeholder="Имя" required>
             <div class="connection__field-wrapper">
-            <input class="connection__field" type="tel" name="telephone-number" placeholder="Телефон/Мессенджер"
-              required>
-            <input class="connection__field" type="email" name="user-email" placeholder="Email" required>
-          </div>
+              <input class="connection__field" type="tel" name="telephone-number" placeholder="Телефон/Мессенджер"
+                required>
+              <input class="connection__field" type="email" name="user-email" placeholder="Email" required>
+            </div>
             <textarea class="connection__field" name="about-company" rows="4"
               placeholder="Компания и её задачи"></textarea>
             <input class="connection__button button" type="submit" value="Отправить">
@@ -246,7 +257,9 @@
         <ul class="main-footer__contacts contact">
           <li class="contact__phone"><a href="tel:+74959692774">+7 (495) 969-27-74</a></li>
           <li class="contact__email"><a href="mailto:info@binn.ru">info@binn.ru</a></li>
-          <li class="contact__address"><a href="https://yandex.ru/maps/org/nagatinskiy/1020158584/?ll=37.661922%2C55.682651&z=16.38">Москва, проспект Андропова, д. 22, БЦ «Нагатинский»</a></li>
+          <li class="contact__address"><a
+              href="https://yandex.ru/maps/org/nagatinskiy/1020158584/?ll=37.661922%2C55.682651&z=16.38">Москва,
+              проспект Андропова, д. 22, БЦ «Нагатинский»</a></li>
           <li class="contact__copyright">
             <div>© 2023 BINN. Все права защищены</div>
             <a class="contact__rules" href="">Условия передачи информации</a>

@@ -1,33 +1,37 @@
 .form-wrapper {
-    background-image: url("../../img/bg-volvo.webp");
-    // background-size: 100% 100%;
+    background-image: url("../../img/bg-volvo2x.webp");
     background-repeat: no-repeat;
     background-size: cover;
     color: #FFFFFF;
     padding: 55px 16px 82px;
     font-weight: 400;
+    position: relative;
 
     @media (min-width: @tablet-width) {
-      padding: 60px 100px;
+      padding: 60px 100px 60px 100px;
     }
 
-    // @media (max-resolution: 1dppx) {
-    //     background-image: url("../img/bg-volvo.webp");
-    // }
+    @media (max-resolution: 1dppx) {
+        background-image: url("../img/bg-volvo.webp");
+    }
 
-    // @media (min-width: @tablet-width) {
-    //     background-image: url("../img/bg-volvo-desktop2x.webp");
+    @media (min-width: @tablet-width) {
+        background-image: url("../img/bg-volvo-desktop2x.webp");
 
-    //     @media (max-resolution: 1dppx) {
-    //         background-image: url("../img/bg-volvo-desktop.webp");
-    //     }
-    // }
+        @media (max-resolution: 1dppx) {
+            background-image: url("../img/bg-volvo-desktop.webp");
+        }
+    }
 
     &__title {
       font-size: 24px;
       font-weight: 500;
       margin-bottom: 25px;
       line-height: 135%;
+
+      @media (min-width: @tablet-width) {
+        max-width: 650px;
+      }
     }
 
     &__text {
@@ -46,4 +50,4 @@
     &__submit-link a {
       color: #F7F7F7;
     }
-}
+  }

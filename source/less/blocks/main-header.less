@@ -1,10 +1,61 @@
 .main-header {
-  background-image: url("../../img/bg-red-bmw.webp");
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
   padding: 28px 16px;
   font-weight: 400;
+
+  &--bmw {
+    background-image: url("../../img/bg-red-bmw2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-red-bmw.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-red-bmw-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-red-bmw-desktop.webp");
+      }
+    }
+  }
+
+  &--volvo {
+    background-image: url("../../img/bg-volvo-header2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-volvo-header.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-volvo-header-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-volvo-header-desktop.webp");
+      }
+    }
+  }
+
+  &--mini {
+    background-image: url("../../img/bg-mini-cooper2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-mini-cooper.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-mini-cooper-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-mini-cooper-desktop.webp");
+      }
+    }
+  }
+
+  &--infinity {
+    background-image: url("../../img/bg-infinity2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-infinity.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-infinity-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-infinity-desktop.webp");
+      }
+    }
+  }
 
   @media (min-width: @tablet-width) {
     padding: 30px 100px;
