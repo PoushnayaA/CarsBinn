@@ -9,10 +9,16 @@ a {
   font-family: "Ubuntu", "Arial", sans-serif;
 }
 
+br {
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+}
+
 body {
   font-weight: 400;
   color: #292929;
-  word-wrap: break-word;
+  // word-wrap: break-word;
   margin: 0;
 }
 

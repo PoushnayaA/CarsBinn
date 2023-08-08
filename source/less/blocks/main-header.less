@@ -3,39 +3,51 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
-  padding: 16px;
+  padding: 28px 16px;
   font-weight: 400;
 
+  @media (min-width: @tablet-width) {
+    padding: 30px 100px;
+  }
+
   &__container {
-    margin-top: 60px;
+    margin-top: 65px;
+
+    @media (min-width: @tablet-width) {
+      margin-top: 90px;
+    }
   }
 
   &__content {
     text-transform: uppercase;
     line-height: 135%;
     font-size: 20px;
+
+    @media (min-width: @tablet-width) {
+      font-size: 32px;
+      max-width: 900px;
+      min-width: 500px;
+      margin-top: 10px;
+      margin-bottom: 29px;
+    }
+
+    & span {
+      white-space: nowrap;
+    }
   }
 
-  &__change-language {
-    background-color: inherit;
-    border: none;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 500;
+  &__logo {
     display: block;
-    margin-left: auto;
-    position: relative;
-    cursor: pointer;
+    margin: 20px 0 39px;
 
-    &::after {
-      content: url("../../img/extra/arrow.svg");
-      margin-left: 6px;
-    }
-
-    &:active::after {
-      transform: rotate(180deg);
+    @media (min-width: @tablet-width) {
+      width: 280px;
+      height: 190px;
+      margin-bottom: 10px;
     }
   }
 
+  &__button {
+    margin-top: 6px;
+  }
 }
-

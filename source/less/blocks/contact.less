@@ -4,7 +4,13 @@
   gap: 20px;
   text-align: center;
 
-  &__rules a {
+  @media (min-width: 1028px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copyright a {
     color: #9999AD;
     position: relative;
 
@@ -17,5 +23,31 @@
       left: 0;
       bottom: 0;
     }
+  }
+
+  &__copyright {
+    font-size: 14px;
+    margin-top: 25px;
+
+    @media (min-width: 1028px) {
+      order: -1;
+      margin-top: 0;
+      margin-right: 13%;
+      min-width: 300px;
+    }
+  }
+
+  &__rules {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  &__phone {
+    min-width: 150px;
+  }
+
+  &__phone a, &__address a, &__email a {
+    color: #292929;
   }
 }

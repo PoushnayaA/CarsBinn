@@ -4,8 +4,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: #FFFFFF;
-    padding: 16px;
+    padding: 55px 16px 82px;
     font-weight: 400;
+
+    @media (min-width: @tablet-width) {
+      padding: 60px 100px;
+    }
 
     // @media (max-resolution: 1dppx) {
     //     background-image: url("../img/bg-volvo.webp");
@@ -22,13 +26,14 @@
     &__title {
       font-size: 24px;
       font-weight: 500;
-      margin-bottom: 19px;
+      margin-bottom: 25px;
       line-height: 135%;
     }
 
     &__text {
       font-size: 16px;
       line-height: 135%;
+      margin-bottom: 40px;
     }
 
     &__submit-link {
@@ -36,7 +41,6 @@
       color: #9999AD;
       font-weight: 400;
       font-size: 14px;
-      margin-bottom: 30px;
     }
 
     &__submit-link a {

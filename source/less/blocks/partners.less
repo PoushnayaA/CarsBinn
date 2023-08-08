@@ -1,36 +1,59 @@
 .partners {
-
   padding: 0;
+
+  &__item {
+    @media (min-width: @tablet-width) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 25px;
+    }
+  }
 
   &__content {
     background-color: #F8F8F8;
   }
 
   &__logo {
-    padding-top: 10px;
+    padding-top: 25px;
     padding-left: 16px;
   }
 
   &__img-container {
     position: relative;
-    }
-
-
-  &__img {
     background-image: url(../../img/extra/bmw-background.svg);
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: 238px 79px;
-    margin: 10px auto 0;
 
     &--volvo {
       background-image: url(../../img/extra/volvo-background.svg);
+      background-size: 255px 79px;
     }
 
     &--rn-bank {
-      padding: 30px 0 0;
       background-image: url(../../img/extra/rn-bank-background.svg);
+      background-size: 269px 83px;
+    }
+    }
+
+  &__img {
+    margin: 10px auto 0;
+    padding-top: 37px;
+    object-fit: cover;
+
+    &--volvo {
+      margin: 27px auto 0;
+      padding-top: 32px;
+    }
+
+    &--rn-bank {
+      margin: 22px auto 0;
+      padding: 36px 61px 0;
+      object-fit: none;
     }
   }
 }
 
+.partners__item:nth-child(2n) .partners__content {
+  order: -1;
+}

@@ -1,15 +1,20 @@
 .connection {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 17px;
+
+  @media (min-width: @tablet-width) {
+    width: 608px;
+  }
 
   &__field {
     background-color: inherit;
-    padding: 12px;
+    padding: 18px 13px 16px;
     border: solid 1px #9999AD;
     border-radius: 5px;
     resize: none;
     color: #ffffff;
+    font-size: 16px;
 
     &:active {
       border-color: #ffffff;
@@ -19,7 +24,19 @@
       font-family: "Ubuntu", "Arial", sans-serif;
       color: #9999AD;
     }
+  }
 
+  &__field-wrapper {
+    @media (min-width: @tablet-width) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+  }
 
+  &__button {
+    margin-top: 9px;
+    margin-bottom: 21px;
   }
 }

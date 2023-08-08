@@ -1,0 +1,58 @@
+.change-language {
+  position: relative;
+
+  &__button {
+    background-color: inherit;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    margin-left: auto;
+    margin-right: 6px;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+      content: url("../../img/extra/arrow.svg");
+      margin-left: 8px;
+    }
+
+    @media (min-width: @tablet-width) {
+      // font-size: 10px;
+    }
+  }
+
+  &__select {
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  &__item {
+    color: #292929;
+    text-transform: uppercase;
+    padding: 12px 10px;
+    position: relative;
+    cursor: pointer;
+
+    &--active {
+      color: #D91F2B;
+    }
+
+    &:not(:first-of-type):after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 1px;
+      background-color: #EFEFEF;
+      display: block;
+      // margin: 0 auto;
+      // left: 0;
+      top: 0;
+    }
+  }
+}

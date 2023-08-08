@@ -1,5 +1,5 @@
 .slider-pagination {
-  padding: 25px 0 30px;
+  padding: 25px 0 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
@@ -18,9 +18,18 @@
     height: 6px;
     cursor: pointer;
 
+    @media (min-width: @tablet-width) {
+      height: 4px;
+    }
+
     &--active {
       background-color: #D91F2B;
       opacity: 1;
     }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 360px;
+    padding: 38px 0 43px;
   }
 }
