@@ -2,22 +2,38 @@ a {
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Ubuntu", "Arial", sans-serif;
+  transition: 1s;
+}
+
+br {
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
 }
 
 body {
-  font-family: "Ubuntu", "Arial", sans-serif;
-  font-size: 14px;
   font-weight: 400;
-  line-height: 21px;
-  color: #000000;
-  word-wrap: break-word;
+  color: #292929;
   margin: 0;
 }
 
 img {
   max-width: 100%;
+  display: block;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }

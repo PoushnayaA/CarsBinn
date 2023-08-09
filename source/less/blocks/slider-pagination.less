@@ -1,0 +1,37 @@
+.slider-pagination {
+  padding: 25px 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+
+
+  &__item {
+    cursor: pointer;
+    padding: 6px 0;
+  }
+
+  &__button {
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    opacity: 0.25;
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    transition: 2s;
+
+    @media (min-width: @tablet-width) {
+      height: 4px;
+    }
+
+    &--active {
+      background-color: #D91F2B;
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 360px;
+    padding: 38px 0 43px;
+  }
+}
