@@ -3,6 +3,11 @@
   flex-direction: column;
   gap: 17px;
 
+  &--error {
+    font-weight: 700;
+    color: #ff0000;
+  }
+
   @media (min-width: @tablet-width) {
     width: 608px;
   }
@@ -15,6 +20,11 @@
     resize: none;
     color: #ffffff;
     font-size: 16px;
+
+
+    &:not(:invalid) {
+      border: solid 1px #ffffff;
+    }
 
     &:active {
       border-color: #ffffff;

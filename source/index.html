@@ -139,7 +139,8 @@
               </div>
               <div class="partners__content">
                 <picture>
-                  <img class="partners__logo partners__logo--volvo" src="img/logo/volvo-logo.svg" width="76" height="85" alt="Volvo.">
+                  <img class="partners__logo partners__logo--volvo" src="img/logo/volvo-logo.svg" width="76" height="85"
+                    alt="Volvo.">
                 </picture>
                 <div class="partners__content-wrapper">
                   <div class="partners__header item-header">
@@ -174,7 +175,8 @@
               </div>
               <div class="partners__content">
                 <picture>
-                  <img class="partners__logo partners__logo--rn-bank" src="img/logo/pn-bank-logo.svg" width="180" height="80" alt="РН Банк.">
+                  <img class="partners__logo partners__logo--rn-bank" src="img/logo/pn-bank-logo.svg" width="180"
+                    height="80" alt="РН Банк.">
                 </picture>
                 <div class="partners__content-wrapper">
                   <div class="partners__header item-header">
@@ -239,14 +241,14 @@
           </div>
           <p class="form-wrapper__text">Интернет-агентство BINN – возможно, то, что Вы искали.</p>
           <form class="form-wrapper__form connection" action="" method="post">
-            <input class="connection__field" type="text" name="user-name" placeholder="Имя" required>
+            <input class="connection__field" type="text" id="name" name="user-name" placeholder="Имя" required>
             <div class="connection__field-wrapper">
-              <input class="connection__field" type="tel" name="telephone-number" placeholder="Телефон/Мессенджер"
-                required>
-              <input class="connection__field" type="email" name="user-email" placeholder="Email" required>
+              <input class="connection__field" type="tel" id="phone" name="telephone-number"
+                placeholder="Телефон/Мессенджер" required>
+              <input class="connection__field" type="email" id="email" name="user-email" placeholder="Email" required>
             </div>
-            <textarea class="connection__field" name="about-company" rows="4"
-              placeholder="Компания и её задачи"></textarea>
+            <textarea class="connection__field connection__field--textarea" name="about-company" rows="4"
+              placeholder="Компания и её задачи" required></textarea>
             <input class="connection__button button" type="submit" value="Отправить">
           </form>
           <div class="form-wrapper__submit-link">Заполняя форму, я принимаю <a href="">условия передачи
@@ -268,6 +270,7 @@
       </footer>
     </div>
   </div>
+  <script src="dist/pristine.js" type="text/javascript"></script>
   <script src="js/main.js"></script>
 </body>
 
