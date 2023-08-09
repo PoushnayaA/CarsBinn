@@ -36,6 +36,7 @@ html {
 *::after {
   box-sizing: border-box;
   font-family: "Ubuntu", "Arial", sans-serif;
+  transition: 1s;
 }
 @media (min-width: 767px) {
   br {
@@ -79,6 +80,16 @@ ul {
   font-family: "Ubuntu", "Arial", sans-serif;
   width: 100%;
   cursor: pointer;
+  transition: none;
+}
+.button:hover {
+  background-color: #ff2c3ac7;
+}
+.button:disabled {
+  background-color: #9999AD;
+}
+.button:active {
+  background-color: #FF2C39;
 }
 @media (min-width: 767px) {
   .button {
@@ -495,6 +506,9 @@ ul {
 .form-wrapper__submit-link a {
   color: #F7F7F7;
 }
+.form-wrapper__submit-link a:hover {
+  text-decoration: underline;
+}
 .connection {
   display: flex;
   flex-direction: column;
@@ -603,6 +617,8 @@ ul {
   color: #FFFFFF;
   padding: 28px 16px;
   font-weight: 400;
+  animation: fade 3s linear infinite;
+  transition: 3s;
 }
 .main-header--bmw {
   background-image: url("../../img/bg-red-bmw2x.webp");
@@ -738,6 +754,7 @@ ul {
   width: 100%;
   height: 6px;
   cursor: pointer;
+  transition: 2s;
 }
 @media (min-width: 767px) {
   .slider-pagination__button {
@@ -766,14 +783,21 @@ ul {
   display: block;
   margin-left: auto;
   margin-right: 6px;
+  padding-right: 29px;
   position: relative;
   cursor: pointer;
 }
 .change-language__button::after {
   content: url("../../img/extra/arrow.svg");
+  position: absolute;
   margin-left: 8px;
 }
-@media (min-width: 767px) {
+.change-language__button--active {
+  padding-right: 29px;
+}
+.change-language__button--active::after {
+  transform: rotate(180deg);
+  right: 8px;
 }
 .change-language__select {
   position: absolute;
@@ -789,6 +813,13 @@ ul {
   padding: 12px 10px;
   position: relative;
   cursor: pointer;
+  transition: none;
+}
+.change-language__item:hover {
+  color: #ff2c3ac7;
+}
+.change-language__item:active {
+  color: #FF2C39;
 }
 .change-language__item--active {
   color: #D91F2B;

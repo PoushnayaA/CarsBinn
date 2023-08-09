@@ -10,6 +10,19 @@
   font-family: "Ubuntu", "Arial", sans-serif;
   width: 100%;
   cursor: pointer;
+  transition: none;
+
+  &:hover {
+    background-color: #ff2c3ac7;
+  }
+
+  &:disabled {
+    background-color: #9999AD;
+  }
+
+  &:active {
+    background-color: #FF2C39;
+  }
 
   @media (min-width: @tablet-width) {
     width: 360px;
