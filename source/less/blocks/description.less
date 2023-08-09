@@ -1,0 +1,25 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  padding: 10px 16px 27px 15px;
+  font-size: 14px;
+
+  &__item {
+    padding-left: 15px;
+    position: relative;
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #9999AD;
+    opacity: 0.3;
+    height: 100%;
+    width: 2px;
+
+  }
+}

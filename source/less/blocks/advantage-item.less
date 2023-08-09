@@ -1,12 +1,29 @@
 .advantage-item {
   text-align: center;
 
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-direction: column;
+    padding: 36px 0;
+  }
+
   &__value {
     color: #D91F2B;
-    font-size: 56px;
+
+    @media (min-width: 767px) {
+      text-align: left;
+    }
   }
 
   &__description {
+    margin-top: -1px;
+    font-size: 16px;
+    line-height: 135%;
+    font-weight: 400;
     color: #9999AD;
+
+    @media (min-width: 767px) {
+      text-align: left;
+    }
   }
 }

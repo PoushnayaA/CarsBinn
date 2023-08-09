@@ -1,0 +1,56 @@
+.connection {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  &--error {
+    font-weight: 700;
+    color: #ff0000;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 608px;
+  }
+
+  &__field {
+    background-color: inherit;
+    padding: 18px 13px 16px;
+    border: solid 1px #9999AD;
+    border-radius: 5px;
+    resize: none;
+    color: #ffffff;
+    font-size: 16px;
+
+
+    &:not(:invalid) {
+      border: solid 1px #ffffff;
+    }
+
+    &:active {
+      border-color: #ffffff;
+    }
+
+    &::placeholder {
+      font-family: "Ubuntu", "Arial", sans-serif;
+      color: #9999AD;
+    }
+  }
+
+  &__field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+    @media (min-width: @tablet-width) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    margin-top: 9px;
+    margin-bottom: 21px;
+  }
+}

@@ -1,0 +1,106 @@
+.main-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+  padding: 28px 16px;
+  font-weight: 400;
+  animation: fade 3s linear infinite;
+  transition: 3s;
+
+  &--bmw {
+    background-image: url("../../img/bg-red-bmw2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-red-bmw.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-red-bmw-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-red-bmw-desktop.webp");
+      }
+    }
+  }
+
+  &--volvo {
+    background-image: url("../../img/bg-volvo-header2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-volvo-header.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-volvo-header-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-volvo-header-desktop.webp");
+      }
+    }
+  }
+
+  &--mini {
+    background-image: url("../../img/bg-mini-cooper2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-mini-cooper.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-mini-cooper-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-mini-cooper-desktop.webp");
+      }
+    }
+  }
+
+  &--infinity {
+    background-image: url("../../img/bg-infinity2x.webp");
+    @media (max-resolution: 1dppx) {
+      background-image: url("../img/bg-infinity.webp");
+    }
+    @media (min-width: 321px) {
+      background-image: url("../img/bg-infinity-desktop2x.webp");
+      @media (max-resolution: 1dppx) {
+          background-image: url("../img/bg-infinity-desktop.webp");
+      }
+    }
+  }
+
+  @media (min-width: @tablet-width) {
+    padding: 30px 100px;
+  }
+
+  &__container {
+    margin-top: 65px;
+
+    @media (min-width: @tablet-width) {
+      margin-top: 90px;
+    }
+  }
+
+  &__content {
+    text-transform: uppercase;
+    line-height: 135%;
+    font-size: 20px;
+
+    @media (min-width: @tablet-width) {
+      font-size: 32px;
+      max-width: 900px;
+      min-width: 500px;
+      margin-top: 10px;
+      margin-bottom: 29px;
+    }
+
+    & span {
+      white-space: nowrap;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin: 20px 0 39px;
+
+    @media (min-width: @tablet-width) {
+      width: 280px;
+      height: 190px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__button {
+    margin-top: 6px;
+  }
+}

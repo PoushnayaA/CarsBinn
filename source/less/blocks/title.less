@@ -1,6 +1,15 @@
 .title {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 135%;
   text-transform: uppercase;
+
+  @media (min-width: @tablet-width) {
+    font-size: 40px;
+    min-width: 200px;
+  }
+
+  &--center {
+    text-align: center;
+  }
 }
