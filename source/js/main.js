@@ -155,3 +155,70 @@ function isValidPassword(password) {
   const pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,20}$/;
   return pattern.test(password);
 }
+
+
+
+
+
+//Счетчик
+const time = 2000;
+const step = 1;
+
+const outNum = (num, elem) => {
+  const counter = document.querySelector(elem);
+  let current = 0;
+  const timeChange = Math.round(time / (num / step));
+  const interval = setInterval(() => {
+    current = current + step;
+    if (current == 3) {
+      clearInterval(interval);
+
+      const intervalB = setInterval(() => {
+        current = current + step;
+        if (current == num-3) {
+          clearInterval(intervalB);
+
+          const intervalC = setInterval(() => {
+            current = current + step;
+            if (current == num) {
+              clearInterval(intervalC);
+            }
+            counter.innerHTML = current;
+          }, timeChange+200);
+
+        }
+        counter.innerHTML = current;
+      }, timeChange);
+
+    }
+    counter.innerHTML = current;
+  }, timeChange+100);
+};
+
+outNum(45, ".features--projects");
+outNum(8, ".features--support");
+outNum(20, ".features--experience");
+
+
+
+
+
+// import IMask from imask;
+const phoneInput = document.querySelector('.connection__field--phone');
+const maskOptions = {
+    mask: '+{7}(000)000{-}00{-}00',
+    lazy: false
+}
+
+
+const phoneInputHandler = () => {
+  const phoneMask = new IMask(phoneInput, maskOptions);
+  phoneInput.style.color = "#ffffff";
+  if (phoneMask.masked.isComplete) {
+    phoneInput.classList.add('connection__field--valid');
+  } else {
+    phoneInput.classList.remove('connection__field--invalid');
+  }
+}
+
+phoneInput.addEventListener ('input', phoneInputHandler);

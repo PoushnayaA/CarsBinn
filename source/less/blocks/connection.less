@@ -22,8 +22,16 @@
     font-size: 16px;
 
 
-    &:not(:invalid) {
+    &--without-mask:not(:invalid) {
       border: solid 1px #ffffff;
+    }
+
+    &--valid {
+      border: solid 1px #ffffff;
+    }
+
+    &--invalid {
+      border: solid 1px #9999AD;
     }
 
     &:active {
