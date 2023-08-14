@@ -79,56 +79,17 @@ connection.addEventListener('submit', (evt) => {
   const email = emailField.value;
   const phone = phoneField.value;
 
+  emailField.style.borderColor = '#FFFFFF';
+  phoneField.style.borderColor = '#FFFFFF';
+
   if ((!isValidName(name)) || (!isValidEmail(email)) || (!isValidPhone(phone))) {
-    if (!isValidName(name)) {
-      nameField.style.borderColor = '#D91F2B';
-      if (!connection.querySelector('.message-name')) {
-        var elem = document.createElement('div');
-        elem.style.color = '#ff0000';
-        elem.textContent = 'Имя может содержать только буквы';
-        elem.fontSize = '5px'
-        elem.classList.add('message-name');
-        connection.insertBefore(elem, connection.querySelector('.connection__field-wrapper'));
-      }
-    } else {
-      if (connection.querySelector('.message-name')) {
-        connection.querySelector('.message-name').remove();
-      }
-      nameField.style.borderColor = '#ffffff'
-    }
 
     if (!isValidEmail(email)) {
       emailField.style.borderColor = '#D91F2B';
-      if (!connection.querySelector('.message-email')) {
-        var elem = document.createElement('div');
-        elem.style.color = '#ff0000';
-        elem.textContent = 'Укажите почту в формате name@email.reg';
-        elem.fontSize = '5px'
-        elem.classList.add('message-email');
-        connection.insertBefore(elem, connection.querySelector('.connection__field--textarea'));
-      }
-    } else {
-      if (connection.querySelector('.message-email')) {
-        connection.querySelector('.message-email').remove();
-      }
-      emailField.style.borderColor = '#ffffff'
     }
 
     if (!isValidPhone(phone)) {
       phoneField.style.borderColor = '#D91F2B';
-      if (!connection.querySelector('.message-phone')) {
-        var elem = document.createElement('div');
-        elem.style.color = '#ff0000';
-        elem.textContent = 'Телефон может содержать только цифры, а также специальные символы';
-        elem.fontSize = '5px'
-        elem.classList.add('message-phone');
-        connection.insertBefore(elem, connection.querySelector('.connection__field--textarea'));
-      }
-    } else {
-      if (connection.querySelector('.message-phone')) {
-        connection.querySelector('.message-phone').remove();
-      }
-      phoneField.style.borderColor = '#ffffff'
     }
     return;
   }
@@ -151,7 +112,73 @@ function isValidPhone(phone) {
   return pattern.test(phone);
 }
 
-function isValidPassword(password) {
-  const pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,20}$/;
-  return pattern.test(password);
+
+
+//Маска для телефона
+const phoneInput = document.querySelector('.connection__field--phone');
+const maskOptions = {
+    mask: '+{7}(000)000{-}00{-}00',
+    lazy: false
 }
+
+const phoneInputHandler = () => {
+  const phoneMask = new IMask(phoneInput, maskOptions);
+  phoneInput.style.color = "#ffffff";
+  if (phoneMask.masked.isComplete) {
+    phoneInput.classList.add('connection__field--valid');
+  } else {
+    phoneInput.classList.remove('connection__field--invalid');
+  }
+}
+
+phoneInput.addEventListener ('input', phoneInputHandler);
+
+
+
+//Запрет на ввод цифр
+const noDigits = (event) => {
+  if ("1234567890".indexOf(event.key) != -1)
+    event.preventDefault();
+}
+
+
+
+//Счетчик
+const time = 2000;
+const step = 1;
+
+const outNum = (num, elem) => {
+  const counter = document.querySelector(elem);
+  let current = 0;
+  const timeChange = Math.round(time / (num / step));
+
+  const interval = setInterval(() => {
+    current = current + step;
+    if (current == 3) {
+      clearInterval(interval);
+
+      const intervalB = setInterval(() => {
+        current = current + step;
+        if (current == num-3) {
+          clearInterval(intervalB);
+
+          const intervalC = setInterval(() => {
+            current = current + step;
+            if (current == num) {
+              clearInterval(intervalC);
+            }
+            counter.innerHTML = current;
+          }, timeChange+200);
+
+        }
+        counter.innerHTML = current;
+      }, timeChange);
+
+    }
+    counter.innerHTML = current;
+  }, timeChange+100);
+};
+
+outNum(45, ".features--projects");
+outNum(8, ".features--support");
+outNum(20, ".features--experience");
