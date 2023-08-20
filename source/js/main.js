@@ -12,36 +12,24 @@ clientBtn.addEventListener('click', onBeMemberButtonClick);
 
 
 //Слайдер
-const header = document.querySelector('.main-header');
-const pagination = document.querySelectorAll('.slider-pagination__item');
 
-const PHOTO = [
-  'bmw',
-  'volvo',
-  'mini',
-  'infinity'
-]
-
-const changePhoto = () => {
-  for (let i = 0; true; i++) {
-    if (header.classList.contains(`main-header--${PHOTO[i % 4]}`)) {
-      header.classList.remove(`main-header--${PHOTO[i % 4]}`);
-      header.classList.add(`main-header--${PHOTO[(i + 1) % 4]}`);
-      pagination[i % 4].querySelector('.slider-pagination__button').classList.remove('slider-pagination__button--active');
-      pagination[(i + 1) % 4].querySelector('.slider-pagination__button').classList.add('slider-pagination__button--active');
-      return
-    }
-  };
-}
-
-let slide = setInterval(changePhoto, 5000);
-
-header.addEventListener('click', function () {
-  changePhoto();
-  clearInterval(slide);
-  slide = setInterval(changePhoto, 5000);
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 0,
+  speed: 700,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+   },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  mousewheel: true,
+  keyboard: true,
 });
-
 
 
 //Активация кнопки смены языка

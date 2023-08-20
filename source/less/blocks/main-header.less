@@ -2,69 +2,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
-  padding: 28px 16px;
+  position: relative;
   font-weight: 400;
-  animation: fade 3s linear infinite;
-  transition: 3s;
-
-  &--bmw {
-    background-image: url("../../img/bg-red-bmw2x.webp");
-    @media (max-resolution: 1dppx) {
-      background-image: url("../img/bg-red-bmw.webp");
-    }
-    @media (min-width: 321px) {
-      background-image: url("../img/bg-red-bmw-desktop2x.webp");
-      @media (max-resolution: 1dppx) {
-          background-image: url("../img/bg-red-bmw-desktop.webp");
-      }
-    }
-  }
-
-  &--volvo {
-    background-image: url("../../img/bg-volvo-header2x.webp");
-    @media (max-resolution: 1dppx) {
-      background-image: url("../img/bg-volvo-header.webp");
-    }
-    @media (min-width: 321px) {
-      background-image: url("../img/bg-volvo-header-desktop2x.webp");
-      @media (max-resolution: 1dppx) {
-          background-image: url("../img/bg-volvo-header-desktop.webp");
-      }
-    }
-  }
-
-  &--mini {
-    background-image: url("../../img/bg-mini-cooper2x.webp");
-    @media (max-resolution: 1dppx) {
-      background-image: url("../img/bg-mini-cooper.webp");
-    }
-    @media (min-width: 321px) {
-      background-image: url("../img/bg-mini-cooper-desktop2x.webp");
-      @media (max-resolution: 1dppx) {
-          background-image: url("../img/bg-mini-cooper-desktop.webp");
-      }
-    }
-  }
-
-  &--infinity {
-    background-image: url("../../img/bg-infinity2x.webp");
-    @media (max-resolution: 1dppx) {
-      background-image: url("../img/bg-infinity.webp");
-    }
-    @media (min-width: 321px) {
-      background-image: url("../img/bg-infinity-desktop2x.webp");
-      @media (max-resolution: 1dppx) {
-          background-image: url("../img/bg-infinity-desktop.webp");
-      }
-    }
-  }
-
-  @media (min-width: @tablet-width) {
-    padding: 30px 100px;
-  }
+  height:min-content;
 
   &__container {
     margin-top: 65px;
+    width: 100%;
 
     @media (min-width: @tablet-width) {
       margin-top: 90px;
@@ -87,6 +31,20 @@
     & span {
       white-space: nowrap;
     }
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 30px 16px;
+
+    @media (min-width: @tablet-width) {
+      padding: 30px 100px;
+    }
+
   }
 
   &__logo {
