@@ -10,7 +10,7 @@
   font-family: "Ubuntu", "Arial", sans-serif;
   width: 100%;
   cursor: pointer;
-  transition: none;
+  animation: fade 3s linear infinite;
 
   &:hover {
     background-color: #ff2c3ac7;
@@ -24,7 +24,9 @@
     background-color: #FF2C39;
   }
 
-  @media (min-width: @tablet-width) {
-    width: 360px;
+  &--member {
+    @media (min-width: @tablet-width) {
+      width: 310px;
+    }
   }
 }

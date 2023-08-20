@@ -1,5 +1,10 @@
 .change-language {
   position: relative;
+  margin-right: 6px;
+
+  @media (min-width: @tablet-width) {
+    margin-right: 0;
+  }
 
   &__button {
     background-color: inherit;
@@ -9,7 +14,6 @@
     font-weight: 500;
     display: block;
     margin-left: auto;
-    margin-right: 6px;
     padding-right: 29px;
     position: relative;
     cursor: pointer;
