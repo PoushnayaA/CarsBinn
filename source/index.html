@@ -6,11 +6,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CarsBinn</title>
-  <link rel="shortcut icon" href="https://www.binn.ru/wp-content/themes/binn/html/dist/static/images/meta/favicon.ico"
-    sizes="32x32">
-  <link rel="apple-touch-icon"
-    href="https://www.binn.ru/wp-content/themes/binn/html/dist/static/images/meta/apple-touch-icon.png">
+  <link rel="shortcut icon" href="https://www.binn.ru/wp-content/themes/binn/html/dist/static/images/meta/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="https://www.binn.ru/wp-content/themes/binn/html/dist/static/images/meta/apple-touch-icon.png">
+
   <link rel="stylesheet" href="css/style.css" />
+
   <link rel="preload" href="fonts/ubuntu-regular.woff" type="font/woff" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/ubuntu-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/ubuntu-bold.woff" type="font/woff" as="font" crossorigin="anonymous">
@@ -20,6 +20,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
 </head>
 
 <body class="page__body">
@@ -253,16 +254,20 @@
           </div>
           <p class="form-wrapper__text">Интернет-агентство BINN – возможно, то, что Вы искали.</p>
           <form class="form-wrapper__form connection" action="#" method="post">
+            <label for="name" class="visually-hidden"></label>
             <input class="connection__field connection__field--without-mask" type="text" id="name" name="user-name"
               placeholder="Имя" required onkeypress="noDigits(event)">
             <div class="connection__field-wrapper">
-              <input class="connection__field connection__field--phone" type="text" id="phone" name="telephone-number"
+              <label for="phone" class="visually-hidden"></label>
+              <input class="connection__field connection__field--phone" type="tel" id="phone" name="telephone-number"
                 placeholder="Телефон/Мессенджер" required>
-              <input class="connection__field connection__field--without-mask" type="text" id="email" name="user-email"
+                <label for="email" class="visually-hidden"></label>
+                <input class="connection__field connection__field--without-mask" type="email" id="email" name="user-email"
                 placeholder="Email" required>
             </div>
+            <label for="description" class="visually-hidden"></label>
             <textarea class="connection__field connection__field--textarea connection__field--without-mask"
-              name="about-company" rows="4" placeholder="Компания и её задачи" required></textarea>
+              name="about-company" id="description" rows="4" placeholder="Компания и её задачи" required></textarea>
             <button class="connection__button button" type="submit" value="send">Отправить</button>
           </form>
           <div class="form-wrapper__submit-link">Заполняя форму, я принимаю <a href="#">условия передачи
@@ -284,7 +289,7 @@
       </footer>
     </div>
   </div>
-  <script src="https://unpkg.com/imask"></script>
+
   <script src="js/main.js"></script>
 </body>
 

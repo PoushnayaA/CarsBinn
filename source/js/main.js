@@ -48,7 +48,6 @@ langButtons.addEventListener('click', function (evt) {
   if (evt.target.matches('.change-language__item')) {
     evt.target.classList.add('change-language__item--active');
     language.textContent = evt.target.textContent;
-    language.textContent.style.textTransform = uppercase;
   }
 });
 
@@ -60,34 +59,42 @@ const nameField = connection.querySelector('#name');
 const emailField = connection.querySelector('#email');
 const phoneField = connection.querySelector('#phone');
 
-connection.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-
-  const name = nameField.value;
-  const email = emailField.value;
-  const phone = phoneField.value;
-
-  emailField.style.borderColor = '#FFFFFF';
-  phoneField.style.borderColor = '#FFFFFF';
-
-  if ((!isValidName(name)) || (!isValidEmail(email)) || (!isValidPhone(phone))) {
-
-    if (!isValidEmail(email)) {
-      emailField.style.borderColor = '#D91F2B';
-    }
-
-    if (!isValidPhone(phone)) {
-      phoneField.style.borderColor = '#D91F2B';
-    }
-    return;
+const blurInputEmail = () => {
+  if (!isValidEmail(emailField.value)) {
+    emailField.style.borderColor = '#D91F2B';
+    emailField.removeEventListener('blur', blurInputEmail);
+    return
   }
+  if (isValidEmail(emailField.value)) {
+    emailField.removeEventListener('blur', blurInputEmail);
+    return
+  }
+};
 
-  connection.submit();
-});
+emailField.addEventListener('focus', () => {
+  emailField.addEventListener('blur', blurInputEmail);
+  emailField.style.borderColor = '#FFFFFF';
+})
 
-function isValidName(name) {
-  const pattern = /^[a-zA-Zа-яëА-ЯЁ]+$/;
-  return pattern.test(name);
+const blurInputPhone = () => {
+  if (!isValidPhone(phoneField.value)) {
+    phoneField.style.borderColor = '#D91F2B';
+    phoneField.removeEventListener('blur', blurInputPhone);
+    return
+  }
+  if (isValidPhone(phoneField.value)) {
+    phoneField.removeEventListener('blur', blurInputPhone);
+    return
+  }
+};
+
+phoneField.addEventListener('focus', () => {
+  phoneField.addEventListener('blur', blurInputPhone);
+  phoneField.style.borderColor = '#FFFFFF';
+})
+
+function isValidPhone(phone) {
+  return phone.length === 18;
 }
 
 function isValidEmail(email) {
@@ -95,37 +102,94 @@ function isValidEmail(email) {
   return pattern.test(email);
 }
 
-function isValidPhone(phone) {
-  const pattern = /^\+?[78][-\(]?\d{1,}\)?-?\d{1,}-?\d{1,}-?\d{1,}$/;
-  return pattern.test(phone);
-}
 
 
+// Ввод телефона
+document.addEventListener("DOMContentLoaded", function () {
+  var phoneInputs = document.querySelectorAll('.connection__field--phone');
 
-//Маска для телефона
-const phoneInput = document.querySelector('.connection__field--phone');
-const maskOptions = {
-    mask: '+{7}(000)000{-}00{-}00',
-    lazy: false
-}
-
-const phoneInputHandler = () => {
-  const phoneMask = new IMask(phoneInput, maskOptions);
-  phoneInput.style.color = "#ffffff";
-  if (phoneMask.masked.isComplete) {
-    phoneInput.classList.add('connection__field--valid');
-  } else {
-    phoneInput.classList.remove('connection__field--invalid');
+  var getInputNumbersValue = function (input) {
+      // Return stripped input value — just numbers
+      return input.value.replace(/\D/g, '');
   }
-}
 
-phoneInput.addEventListener ('input', phoneInputHandler);
+  var onPhonePaste = function (e) {
+      var input = e.target,
+          inputNumbersValue = getInputNumbersValue(input);
+      var pasted = e.clipboardData || window.clipboardData;
+      if (pasted) {
+          var pastedText = pasted.getData('Text');
+          if (/\D/g.test(pastedText)) {
+              // Attempt to paste non-numeric symbol — remove all non-numeric symbols,
+              // formatting will be in onPhoneInput handler
+              input.value = inputNumbersValue;
+              return;
+          }
+      }
+  }
+
+  var onPhoneInput = function (e) {
+      var input = e.target,
+          inputNumbersValue = getInputNumbersValue(input),
+          selectionStart = input.selectionStart,
+          formattedInputValue = "";
+
+      if (!inputNumbersValue) {
+          return input.value = "";
+      }
+
+      if (input.value.length != selectionStart) {
+          // Editing in the middle of input, not last symbol
+          if (e.data && /\D/g.test(e.data)) {
+              // Attempt to input non-numeric symbol
+              input.value = inputNumbersValue;
+          }
+          return;
+      }
+
+      if (["3", "4", "7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
+          if (inputNumbersValue[0] === "9") inputNumbersValue = "7" + inputNumbersValue;
+          if (inputNumbersValue[0] === "4") inputNumbersValue = "7" + inputNumbersValue;
+          if (inputNumbersValue[0] === "3") inputNumbersValue = "7" + inputNumbersValue;
+          if (inputNumbersValue.length === 10 && inputNumbersValue[0] === "8") inputNumbersValue = "7" + inputNumbersValue;
+          var firstSymbols = (inputNumbersValue.length === 11 && inputNumbersValue[0] === "8") ? "+7" : "+7";
+          formattedInputValue = input.value = firstSymbols + " ";
+          if (inputNumbersValue.length > 1) {
+              formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+          }
+          if (inputNumbersValue.length >= 5) {
+              formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+          }
+          if (inputNumbersValue.length >= 8) {
+              formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+          }
+          if (inputNumbersValue.length >= 10) {
+              formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+          }
+      } else {
+          formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+      }
+      input.value = formattedInputValue;
+  }
+  var onPhoneKeyDown = function (e) {
+      // Clear input after remove last symbol
+      var inputValue = e.target.value.replace(/\D/g, '');
+      if (e.keyCode === 8 && inputValue.length === 1) {
+          e.target.value = "";
+      }
+  }
+  for (var phoneInput of phoneInputs) {
+      phoneInput.addEventListener('keydown', onPhoneKeyDown);
+      phoneInput.addEventListener('input', onPhoneInput, false);
+      phoneInput.addEventListener('paste', onPhonePaste, false);
+  }
+})
 
 
 
 //Запрет на ввод цифр
 const noDigits = (event) => {
-  if ("1234567890".indexOf(event.key) != -1)
+  if(!/[a-z\s]|[а-я\s]/ig.test(event.key))
     event.preventDefault();
 }
 
@@ -142,17 +206,17 @@ const outNum = (num, elem) => {
 
   const interval = setInterval(() => {
     current = current + step;
-    if (current == 3) {
+    if (current === 3) {
       clearInterval(interval);
 
       const intervalB = setInterval(() => {
         current = current + step;
-        if (current == num-3) {
+        if (current === num-3) {
           clearInterval(intervalB);
 
           const intervalC = setInterval(() => {
             current = current + step;
-            if (current == num) {
+            if (current === num) {
               clearInterval(intervalC);
             }
             counter.innerHTML = current;

@@ -530,6 +530,7 @@ ul {
   resize: none;
   color: #ffffff;
   font-size: 16px;
+  pointer-events: auto;
 }
 .connection__field--without-mask:not(:invalid) {
   border: solid 1px #ffffff;
