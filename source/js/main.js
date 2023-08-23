@@ -205,6 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (inputNumbersValue.length >= 10) {
               formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
           }
+        }
       input.value = formattedInputValue;
   }
   var onPhoneKeyDown = function (e) {
