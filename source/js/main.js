@@ -52,6 +52,20 @@ langButtons.addEventListener('click', function (evt) {
 });
 
 
+const showMessage = (field) => {
+  const alertElement = document.createElement('div');
+  if (field === 'email') {
+    alertElement.textContent = 'Ваш email является некорректным';
+  } else if (field === 'name') {
+    alertElement.textContent = 'Это поле является обязательным';
+  } else if (field === 'phone') {
+    alertElement.textContent = 'Заполните поле полностью';
+  }
+  alertElement.classList.add('message');
+  document.querySelector(`.connection__container--${field}`).append(alertElement);
+}
+
+
 
 //Проверка полей формы
 const connection = document.querySelector('.connection');
@@ -62,6 +76,7 @@ const phoneField = connection.querySelector('#phone');
 const blurInputEmail = () => {
   if (!isValidEmail(emailField.value)) {
     emailField.style.borderColor = '#D91F2B';
+    showMessage('email');
     emailField.removeEventListener('blur', blurInputEmail);
     return
   }
@@ -74,11 +89,13 @@ const blurInputEmail = () => {
 emailField.addEventListener('focus', () => {
   emailField.addEventListener('blur', blurInputEmail);
   emailField.style.borderColor = '#FFFFFF';
+  document.querySelector('.connection__container--email').querySelector('.message').remove();
 })
 
 const blurInputPhone = () => {
   if (!isValidPhone(phoneField.value)) {
     phoneField.style.borderColor = '#D91F2B';
+    showMessage('phone');
     phoneField.removeEventListener('blur', blurInputPhone);
     return
   }
@@ -91,7 +108,31 @@ const blurInputPhone = () => {
 phoneField.addEventListener('focus', () => {
   phoneField.addEventListener('blur', blurInputPhone);
   phoneField.style.borderColor = '#FFFFFF';
+  document.querySelector('.connection__container--phone').querySelector('.message').remove();
 })
+
+const blurInputName = () => {
+  if (!isValidName(nameField.value)) {
+    nameField.style.borderColor = '#D91F2B';
+    showMessage('name');
+    nameField.removeEventListener('blur', blurInputName);
+    return
+  }
+  if (isValidName(nameField.value)) {
+    nameField.removeEventListener('blur', blurInputName);
+    return
+  }
+};
+
+nameField.addEventListener('focus', () => {
+  nameField.addEventListener('blur', blurInputName);
+  nameField.style.borderColor = '#FFFFFF';
+  document.querySelector('.connection__container--name').querySelector('.message').remove();
+})
+
+function isValidName(phone) {
+  return phone.length > 0;
+}
 
 function isValidPhone(phone) {
   return phone.length === 18;
@@ -147,10 +188,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
       }
 
-      if (["3", "4", "7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
-          if (inputNumbersValue[0] === "9") inputNumbersValue = "7" + inputNumbersValue;
-          if (inputNumbersValue[0] === "4") inputNumbersValue = "7" + inputNumbersValue;
-          if (inputNumbersValue[0] === "3") inputNumbersValue = "7" + inputNumbersValue;
+      if ((inputNumbersValue[0]) > -1) {
+          if ((inputNumbersValue[0] !== "7")&&(inputNumbersValue[0] !== "8")) inputNumbersValue = "7" + inputNumbersValue;
           if (inputNumbersValue.length === 10 && inputNumbersValue[0] === "8") inputNumbersValue = "7" + inputNumbersValue;
           var firstSymbols = (inputNumbersValue.length === 11 && inputNumbersValue[0] === "8") ? "+7" : "+7";
           formattedInputValue = input.value = firstSymbols + " ";
@@ -166,9 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
           if (inputNumbersValue.length >= 10) {
               formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
           }
-      } else {
-          formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
-      }
       input.value = formattedInputValue;
   }
   var onPhoneKeyDown = function (e) {
@@ -184,6 +220,8 @@ document.addEventListener("DOMContentLoaded", function () {
       phoneInput.addEventListener('paste', onPhonePaste, false);
   }
 })
+
+
 
 
 

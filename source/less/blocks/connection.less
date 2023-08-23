@@ -3,13 +3,12 @@
   flex-direction: column;
   gap: 17px;
 
-  &--error {
-    font-weight: 700;
-    color: #ff0000;
-  }
-
   @media (min-width: @tablet-width) {
     width: 608px;
+  }
+
+  &__container {
+    transition: all 1s ease;
   }
 
   &__field {
@@ -21,6 +20,8 @@
     color: #ffffff;
     font-size: 16px;
     pointer-events: auto;
+    width: 100%;
+
 
 
     &--without-mask:not(:invalid) {
@@ -53,7 +54,7 @@
     @media (min-width: @tablet-width) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 17px;
       width: 100%;
     }
   }

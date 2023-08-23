@@ -1,42 +1,3 @@
-// .slider-pagination {
-//   padding: 25px 0 20px;
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-//   gap: 10px;
-
-
-//   &__item {
-//     cursor: pointer;
-//     padding: 6px 0;
-//   }
-
-//   &__button {
-//     border: none;
-//     border-radius: 5px;
-//     background-color: #ffffff;
-//     opacity: 0.25;
-//     width: 100%;
-//     height: 6px;
-//     cursor: pointer;
-//     transition: 2s;
-
-//     @media (min-width: @tablet-width) {
-//       height: 4px;
-//     }
-
-//     &--active {
-//       background-color: #D91F2B;
-//       opacity: 1;
-//     }
-//   }
-
-//   @media (min-width: @tablet-width) {
-//     width: 360px;
-//     padding: 38px 0 43px;
-//   }
-// }
-
-
 .swiper{
   width: 100%;
   height: 100%;
@@ -48,7 +9,7 @@
   text-align: center;
   font-size: 18px;
   background-color: aliceblue;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -64,15 +25,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
-  bottom: 55px !important;
+  position: relative !important;
+  bottom: unset !important;
   width: 100% !important;
-  padding: 0 16px;
+  margin-top: 30px;
+  transition: all 1s ease !important;
 
   @media (min-width: @tablet-width) {
-    margin-left: 100px;
-    padding: 0;
     width: 310px !important;
-    bottom: 80px !important;
   }
 }
 
