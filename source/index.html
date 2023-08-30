@@ -11,8 +11,6 @@
   <link rel="apple-touch-icon"
     href="https://www.binn.ru/wp-content/themes/binn/html/dist/static/images/meta/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="css/style.css" />
-
   <link rel="preload" href="fonts/ubuntu-regular.woff" type="font/woff" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/ubuntu-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/ubuntu-bold.woff" type="font/woff" as="font" crossorigin="anonymous">
@@ -22,6 +20,8 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
 
 </head>
 
@@ -289,10 +289,10 @@
           </div>
           <label for="description" class="visually-hidden"></label>
           <textarea class="connection__field connection__field--textarea connection__field--without-mask"
-            name="about-company" id="description" rows="4" placeholder="Компания и её задачи" required></textarea>
+            name="about-company" id="description" rows="4" placeholder="Компания и её задачи"></textarea>
           <button class="connection__button button" type="submit" value="send">Отправить</button>
         </form>
-        <div class="form-wrapper__submit-link">Заполняя форму, я принимаю <a href="#">условия передачи
+        <div class="form-wrapper__submit-link">Заполняя форму, я принимаю <a href="#" class="form-wrapper__open-popup">условия передачи
             информации</a></div>
       </div>
     </main>
@@ -309,6 +309,30 @@
         </li>
       </ul>
     </footer>
+  </div>
+  <div class="agreement-window">
+    <a href="#" class="agreement-window__close" style="background-image: url(https://stage.binn.ru/wp-content/themes/binn/html/dist/static/images/svg/sprite.svg);"></a>
+    <div class="agreement-window__content">
+      <h3 class="agreement-window__title">Условия передачи информации</h3>
+      <p>Я даю согласие OOO «ЭсБилдер» (далее «BINN») на обработку моих персональных данных в соответствии со статьями
+        6, 9, 10, 18 Федерального закона от 27 июля 2006 года № 152-ФЗ «О персональных данных», указанных в онлайн-форме
+        и/или предоставленных мною с целью:</p>
+      <ul>
+        <li>заключения с BINN договоров на разработку сайта, аудит и консалтинг, продвижение сайта, поддержку сайта.
+        </li>
+        <li>в любых других целях, прямо или косвенно касающихся услуг, связанных с сайтом и/или направлением мне
+          информации об услугах BINN.</li>
+        <li>получение работы в компании.</li>
+      </ul>
+      <p>Способы обработки персональных данных могут быть любыми, включая сбор, систематизацию, накопление, хранение,
+        уточнение, обновление, изменение, воспроизведение, обезличивание, блокирование и уничтожение.</p>
+      <p>Настоящее согласие применяется в отношении обработки следующих данных: имя, номер телефона, адрес электронной
+        почты (E-mail).</p>
+      <p>Настоящее согласие предоставляется сроком на пять лет. По истечении указанного срока действие согласия
+        считается продленным на каждые следующие пять лет при отсутствии сведений о его отзыве.</p>
+      <p>Согласие может быть отозвано мною в любой момент путем направления в BINN подписанного мною письменного
+        заявления.</p>
+    </div>
   </div>
 
   <script src="js/main.js"></script>

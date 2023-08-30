@@ -17,7 +17,7 @@
 
 .swiper-slide img{
   width: 100%;
-  object-fit: cover !important;
+  object-fit: cover;
 }
 
 .swiper-pagination {
@@ -25,11 +25,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
-  position: relative !important;
+  position: relative;
   bottom: unset !important;
   width: 100% !important;
   margin-top: 30px;
-  transition: all 1s ease !important;
+  transition: all 1s ease;
 
   @media (min-width: @tablet-width) {
     width: 310px !important;
@@ -38,20 +38,20 @@
 
 .swiper-pagination-bullet {
   border: none;
-  border-radius: 5px !important;
-  background-color: #ffffff !important;
-  opacity: 0.25 !important;
-  width: 100% !important;
-  height: 6px !important;
-  transition: 1s !important;
-  margin: 0 !important;
+  border-radius: 5px;
+  background-color: #ffffff;
+  opacity: 0.25;
+  width: 100%;
+  height: 6px;
+  transition: 1s;
+  margin: 0;
 
   @media (min-width: @tablet-width) {
-    height: 4px !important;
+    height: 4px;
   }
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #D91F2B !important;
-  opacity: 1 !important;
+  background-color: #D91F2B;
+  opacity: 1;
 }

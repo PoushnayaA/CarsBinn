@@ -273,3 +273,15 @@ const outNum = (num, elem) => {
 outNum(45, ".features--projects");
 outNum(8, ".features--support");
 outNum(20, ".features--experience");
+
+// document.querySelector('.js-contact-block').style.display = 'none';
+
+document.querySelector('.form-wrapper__open-popup').addEventListener('click', function (evt) {
+  evt.preventDefault();
+  document.querySelector('.agreement-window').style.display = 'block';
+});
+
+document.querySelector('.agreement-window__close').addEventListener('click', function (evt) {
+  evt.preventDefault();
+  document.querySelector('.agreement-window').style.display = 'none';
+});
