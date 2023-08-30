@@ -19,11 +19,12 @@
     text-transform: uppercase;
     line-height: 135%;
     font-size: 20px;
+    min-height: 162px;
 
     @media (min-width: @tablet-width) {
       font-size: 32px;
       max-width: 900px;
-      min-width: 500px;
+      min-width: 600px;
       margin-top: 10px;
       margin-bottom: 29px;
     }
@@ -40,6 +41,7 @@
     z-index: 100;
     width: 100%;
     padding: 30px 16px;
+    height: 100%;
 
     @media (min-width: @tablet-width) {
       padding: 30px 100px;
@@ -60,5 +62,7 @@
 
   &__button {
     margin-top: 6px;
+    margin-bottom: 6px;
+    transition: all 1s ease;
   }
 }

@@ -4,6 +4,7 @@ a {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *,
@@ -11,7 +12,6 @@ html {
 *::after {
   box-sizing: border-box;
   font-family: "Ubuntu", "Arial", sans-serif;
-
 }
 
 br {
@@ -23,8 +23,10 @@ br {
 body {
   font-weight: 400;
   color: #292929;
+  width: 100%;
   margin: 0 auto;
   background-color: #29292919;
+  animation: fade 3s linear infinite;
 }
 
 img {
